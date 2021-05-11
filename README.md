@@ -25,7 +25,7 @@ Entre suas funções, o INPI é responsável pelo registro e concessão de marca
 <hr>
 
 ### Origem dos dados
-Os dados a serem coletados para o processo de BI são públicos e disponibilizados na Revista da Propriedade Industrial (http://revistas.inpi.gov.br/rpi/). O INPI divulga semanalmente, toda terça-feira, os dados de atualização sobre os processos de registros de marcas, tanto no formato pdf quanto em XML. Neste trabalho, foi avaliado que o arquivo XML contém as principais informações de despachos do INPI, e servirá como origem dos dados para o processo de ETL.
+Os dados a serem coletados para o processo de BI são públicos e disponibilizados na <a href="http://revistas.inpi.gov.br/rpi" target="_blank">Revista da Propriedade Industrial</a>. O INPI divulga semanalmente, toda terça-feira, os dados de atualização sobre os processos de registros de marcas, tanto no formato pdf quanto em XML. Neste trabalho, foi avaliado que o arquivo XML contém as principais informações de despachos do INPI, e servirá como origem dos dados para o processo de ETL.
 
 Vale destacar que o arquivo XML tem dezenas de milhares de despachos, e entre 20 e 40 MB.
 
