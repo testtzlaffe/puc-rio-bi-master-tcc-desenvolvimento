@@ -1,12 +1,10 @@
 # TCC | BI Master | PUC-Rio
 
-## Processo de BI para acompanhamento de registros de marcas no INPI
+## [EM DESENVOLVIMENTO] Processo de BI para acompanhamento de registros de marcas no INPI
 
 Christian Testtzlaffe Alpoim ([Linkedin](https://www.linkedin.com/in/christian-testtzlaffe-alpoim/))
 
 **Orientador:** Prof. Anderson Nascimento
-
-<br>
 
 <hr>
 
@@ -18,7 +16,7 @@ Este trabalho tem o objetivo de construir um processo de Business Intelligence (
 
 ### INPI
 
-O Instituto Nacional da Propriedade Industrial (INPI) é uma autarquia federal brasileira, criada em 1970, vinculada ao Ministério do Desenvolvimento, Indústria e Comércio Exterior (MDIC). Localiza-se na cidade do Rio de Janeiro, Brasil. Antecedido pelo Departamento Nacional da Propriedade Industrial.
+O Instituto Nacional da Propriedade Industrial (INPI) é uma autarquia federal brasileira, criada em 1970, vinculada ao Ministério do Desenvolvimento, Indústria e Comércio Exterior (MDIC).
 
 Conforme art. 2º da Lei nº 5.648/1970, "O INPI tem por finalidade principal executar, no âmbito nacional, as normas que regulam a propriedade industrial, tendo em vista a sua função social, econômica, jurídica e técnica, bem como pronunciar-se quanto à conveniência de assinatura, ratificação e denúncia de convenções, tratados, convênios e acordos sobre propriedade industrial". (Redação dada pela Lei nº 9.279, de 1996).
 
@@ -35,6 +33,8 @@ Vale destacar que o arquivo XML tem dezenas de milhares de despachos, e entre 20
 
 ### Extração, transformação e carga dos dados
 O processo central do trabalho, o ETL, segue algumas etapas importantes para o alcance do objetivo de geração do banco de dados devidamente carregado. Abaixo, um diagrama sobre este fluxo:
+
+[INSERIR DIAGRAMA]
 
 Fonte dos dados (XML semanal de marcas da Revista de Propriedade Industrial) → Coleta dos dados → Transformações dos dados (conteúdos das tags do XML para formato tabular) → carga (inserção de registros no banco de dados).
 
@@ -56,21 +56,24 @@ Para cada etapa do projeto, foram definidas ferramentas que auxiliarão no proce
 
 O PDI também auxiliou na listagem de todas as tags e nós do arquivo XML (no exemplo, revista nº 2625). Por meio da etapa "Get data from XML" na ferramenta, na funcionalidade "Get XPath nodes", é possível visualizar todos os nós (tags) presentes no arquivo:
 
+![image](https://user-images.githubusercontent.com/50345995/117891809-f5dd8380-b28d-11eb-972f-e74456b2ea59.png)
+
+
 Além das tags, alguns nós do XML têm atributos, por exemplo: na tag "titular", há atributos como nome e país do titular da marca.
 
 As tags mais importantes para este trabalho são:
 
 Revista: cada semana, o INPI disponibiliza uma revista, e esta tag do XML indica o número e a data da divulgação.
 
-Processo: primeira tag após o nó da revista. Há dezenas de milhares de processos por Revista/semana. Tem como atributos o número do processo, e em algumas situações, traz a data de depósito, a data de concessão e a data de vigência de uso da marca.
+Processo: primeira tag após o nó da revista. Há dezenas de milhares de processos por revista/semana. Tem como atributos o número do processo, e em algumas situações, traz a data de depósito, a data de concessão e a data de vigência de uso da marca.
 
 Marca: em alguns tipos de registros, esta tag aparece indicando o nome da marca, a natureza e a apresentação (nominativa, figurativa ou mista).
 
-Despachos: junto com o processo, os depachos são as principais informações do arquivo. Nos despacho é que está a descrição do que aconteceu naquele processo naquela semana (com código de despacho), e em alguns casos traz observações (texto-complementar ou texto-sobrestamento).
+Despachos: junto com o processo, os depachos são as principais informações do arquivo. No despacho é que está a descrição do que aconteceu no processo naquela semana (com código de despacho), e em alguns casos traz observações (texto-complementar ou texto-sobrestamento).
 
 Titulares: lista os nomes, estados e países dos titulares da marca.
 
-Classes Vienna e Nice: são classificações de atividades que aquela marca está atrelada. 
+Classes Vienna e Nice: são classificações de atividades que a marca está atrelada. 
 
 Abaixo, um exemplo de processo no arquivo XML:
 
@@ -101,3 +104,46 @@ automotores. Detalhamento em veículos automotroes.; </especificacao>
   </processo>
 
 ```
+<hr>
+
+### Modelagem das tabelas e campos
+
+A desenvolver
+
+<hr>
+
+### Criação do banco de dados
+
+A desenvolver
+
+<hr>
+
+### Transformação com PDI
+
+A desenvolver
+
+<hr>
+
+### Carga dos dados
+
+A desenvolver
+
+<hr>
+
+### Construção da API
+
+A desenvolver
+
+<hr>
+
+### Construção da interface web
+
+A desenvolver
+
+<hr>
+
+### Resultados e conclusões
+
+A desenvolver
+
+
