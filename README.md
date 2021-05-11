@@ -44,6 +44,8 @@ Fonte dos dados (XML semanal de marcas da Revista de Propriedade Industrial) →
 
 Para cada etapa do projeto, foram definidas ferramentas que auxiliarão no processo:
 
+[INSERIR IMAGEM DA ARQUITETURA]
+
 - Modelagem dos dados: Power Architect
 - ETL: Pentaho Data Integration (PDI)
 - SGBD: PostgreSQL
