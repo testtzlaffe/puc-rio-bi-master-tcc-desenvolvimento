@@ -29,6 +29,8 @@ Entre suas funções, o INPI é responsável pelo registro e concessão de marca
 ### Origem dos dados
 Os dados a serem coletados para o processo de BI são públicos e disponibilizados na Revista da Propriedade Industrial (http://revistas.inpi.gov.br/rpi/). O INPI divulga semanalmente, toda terça-feira, os dados de atualização sobre os processos de registros de marcas, tanto no formato pdf quanto em XML. Neste trabalho, foi avaliado que o arquivo XML contém as principais informações de despachos do INPI, e servirá como origem dos dados para o processo de ETL.
 
+Vale destacar que o arquivo XML tem dezenas de milhares de despachos, e entre 20 e 40 MB.
+
 <hr>
 
 ### Extração, transformação e carga dos dados
@@ -50,7 +52,7 @@ Para cada etapa do projeto, foram definidas ferramentas que auxiliarão no proce
 
 <hr>
 
-### Fonte dos dados
+### Mapeamento dos dados
 
 O PDI também auxiliou na listagem de todas as tags e nós do arquivo XML (no exemplo, revista nº 2625). Por meio da etapa "Get data from XML" na ferramenta, na funcionalidade "Get XPath nodes", é possível visualizar todos os nós (tags) presentes no arquivo:
 
