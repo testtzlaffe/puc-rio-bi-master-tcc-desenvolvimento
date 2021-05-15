@@ -46,7 +46,7 @@ Para cada etapa do projeto, foram definidas ferramentas que auxiliarão no proce
 
 [INSERIR IMAGEM DA ARQUITETURA]
 
-- Modelagem dos dados: [Power Architect](http://www.bestofbi.com/page/architect)
+- Modelagem dos dados: [SQL Power Architect](http://www.bestofbi.com/page/architect)
 - ETL: [Pentaho Data Integration (PDI)](https://help.pentaho.com/Documentation/7.1/0D0/Pentaho_Data_Integration)
 - SGBD: [PostgreSQL](https://www.postgresql.org/)
 - API: [Node.js](https://nodejs.org/en/)
