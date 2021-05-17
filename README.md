@@ -26,22 +26,24 @@ Entre suas funções, o INPI é responsável pelo registro e concessão de marca
 
 ### Etapas, Arquitetura e Tecnologias
 
-Para cada etapa do projeto, foram definidas ferramentas que auxiliarão no processo:
+O diagrama abaixo resume as etapas do processo, bem como a arquitetura da solução e indicação das tecnologias:
 
-[INSERIR IMAGEM DA ARQUITETURA]
+<img src="Arquitetura.png" />
 
-- Modelagem dos dados: [SQL Power Architect](http://www.bestofbi.com/page/architect)
-- ETL: [Pentaho Data Integration (PDI)](https://help.pentaho.com/Documentation/7.1/0D0/Pentaho_Data_Integration)
-- SGBD: [PostgreSQL](https://www.postgresql.org/)
-- API: [Node.js](https://nodejs.org/en/)
-- Interface: Página Web (HTML, CSS e JavaScript)
+- Fonte dos dados: arquivos XML do site do INPI
+- Mapeamento dos dados: estudo das principais tags e atributos do arquivo, bem como suas relações
+- Modelagem dos dados: desenhar o modelo de tabelas e seus relacionamentos, com uso do [SQL Power Architect](http://www.bestofbi.com/page/architect)
+- BD (banco de dados): criação e atualização das tabelas por meio do [PostgreSQL](https://www.postgresql.org/)
+- ETL: extrações, transformações e cargas com [Pentaho Data Integration (PDI)](https://help.pentaho.com/Documentation/7.1/0D0/Pentaho_Data_Integration)
+- API (Application Programming Interface): construção do backend da solução com [Node.js](https://nodejs.org/en/)
+- Interface: solução web com utilização das tecnologias HTML, CSS e JavaScript
 
 <hr>
 
 ### Fonte dos dados
 Os dados a serem coletados para o processo de BI são públicos e disponibilizados na <a href="http://revistas.inpi.gov.br/rpi" target="_blank">Revista da Propriedade Industrial</a>. O INPI divulga semanalmente, toda terça-feira, os dados de atualização sobre os processos de registros de marcas, tanto no formato pdf quanto em XML. Neste trabalho, foi avaliado que o arquivo XML contém as principais informações de despachos do INPI, e servirá como origem dos dados para o processo de ETL.
 
-Vale destacar que o arquivo XML tem dezenas de milhares de despachos, e entre 20 e 40 MB.
+Vale destacar que o arquivo XML tem dezenas de milhares de despachos, cada um em torno de 20 a 30 MB.
 
 <hr>
 
