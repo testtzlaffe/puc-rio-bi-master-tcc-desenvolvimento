@@ -28,7 +28,7 @@ Entre suas funções, o INPI é responsável pelo registro e concessão de marca
 
 O diagrama abaixo resume as etapas do processo, bem como a arquitetura da solução e indicação das tecnologias:
 
-<img src="Arquitetura.png" />
+<img src="Arquitetura.png" alt="imagem da arquitetura da solução" />
 
 - Fonte dos dados: arquivos XML do site do INPI
 - Mapeamento dos dados: estudo das principais tags e atributos do arquivo, bem como suas relações
@@ -53,7 +53,7 @@ O PDI também auxiliou na listagem de todas as tags e nós do arquivo XML (no ex
 
 Imagem do resultado do "Get XPath nodes":
 
-<img src="https://user-images.githubusercontent.com/50345995/117891809-f5dd8380-b28d-11eb-972f-e74456b2ea59.png" />
+<img src="https://user-images.githubusercontent.com/50345995/117891809-f5dd8380-b28d-11eb-972f-e74456b2ea59.png" alt="imagem do Get XPath nodes" />
 
 Além das tags, alguns nós do XML têm atributos, por exemplo: na tag "titular", há atributos como nome, país e UF do titular da marca.
 
@@ -147,13 +147,19 @@ automotores. Detalhamento em veículos automotroes.; </especificacao>
 
 ### Modelagem das tabelas e campos
 
-A desenvolver
+Partindo do mapeamento dos dados da etapa anterior, foi possível identificar quais as entidades mais importantes para o modelo do banco de dados. Basicamente, há as seguintes entidades: revistas, despachos, processos, titulares e marcas (com auxílio das tabelas natureza_marca e apresentacao_marca).
+
+Segue abaixo o modelo construído até o momento no SQL Power Architect:
+
+<img src="Modelo-BD.png" alt="imagem do modelo do banco de dados" />
 
 <hr>
 
 ### Criação do banco de dados
 
-A desenvolver
+O banco de dados utiliza com sistema gerenciador (SGBD) o PostgreSQL. A criação das tabelas foi originada diretamente do SQL Power Architect, tomando como base o modelo desenhado. Abaixo, o exemplo de resultado da criação da tabela "revistas", na ferramenta pgAdmin:
+
+<img src="Postgres.png" alt="imagem do postgreSQL" />
 
 <hr>
 
