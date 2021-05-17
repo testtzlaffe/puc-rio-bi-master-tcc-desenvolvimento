@@ -164,11 +164,7 @@ O banco de dados utiliza com sistema gerenciador (SGBD) o PostgreSQL. A criaçã
 <hr>
 
 ### Extração, transformação e carga dos dados
-O processo central do trabalho, o ETL, segue algumas etapas importantes para o alcance do objetivo de geração do banco de dados devidamente carregado. Abaixo, um diagrama sobre este fluxo:
-
-[INSERIR DIAGRAMA]
-
-Fonte dos dados (XML semanal de marcas da Revista de Propriedade Industrial) → Coleta dos dados → Transformações dos dados (conteúdos das tags do XML para formato tabular) → carga (inserção de registros no banco de dados).
+O processo central do trabalho, o ETL, segue algumas etapas importantes para o alcance do objetivo de geração do banco de dados devidamente carregado. 
 
 <hr>
 
