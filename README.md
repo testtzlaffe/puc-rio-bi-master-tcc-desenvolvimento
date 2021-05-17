@@ -57,7 +57,7 @@ Imagem do resultado do "Get XPath nodes":
 
 Além das tags, alguns nós do XML têm atributos, por exemplo: na tag "titular", há atributos como nome, país e UF do titular da marca.
 
-Tabela com árvore de tags e atributos:
+Tabela com todos os dados mapeados, indicando a estrutura de tags e atributos do XML:
 
 <table>
 <tr><th>TAG</th><th>CAMINHO</th><th>ATRIBUTOS</th><th>CONTÉM TEXTO INTERNO?</th></tr>
