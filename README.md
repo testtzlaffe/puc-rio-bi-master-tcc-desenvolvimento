@@ -24,23 +24,7 @@ Entre suas funções, o INPI é responsável pelo registro e concessão de marca
 
 <hr>
 
-### Origem dos dados
-Os dados a serem coletados para o processo de BI são públicos e disponibilizados na <a href="http://revistas.inpi.gov.br/rpi" target="_blank">Revista da Propriedade Industrial</a>. O INPI divulga semanalmente, toda terça-feira, os dados de atualização sobre os processos de registros de marcas, tanto no formato pdf quanto em XML. Neste trabalho, foi avaliado que o arquivo XML contém as principais informações de despachos do INPI, e servirá como origem dos dados para o processo de ETL.
-
-Vale destacar que o arquivo XML tem dezenas de milhares de despachos, e entre 20 e 40 MB.
-
-<hr>
-
-### Extração, transformação e carga dos dados
-O processo central do trabalho, o ETL, segue algumas etapas importantes para o alcance do objetivo de geração do banco de dados devidamente carregado. Abaixo, um diagrama sobre este fluxo:
-
-[INSERIR DIAGRAMA]
-
-Fonte dos dados (XML semanal de marcas da Revista de Propriedade Industrial) → Coleta dos dados → Transformações dos dados (conteúdos das tags do XML para formato tabular) → carga (inserção de registros no banco de dados).
-
-<hr>
-
-### Arquitetura da solução
+### Etapas, Arquitetura e Tecnologias
 
 Para cada etapa do projeto, foram definidas ferramentas que auxiliarão no processo:
 
@@ -51,6 +35,13 @@ Para cada etapa do projeto, foram definidas ferramentas que auxiliarão no proce
 - SGBD: [PostgreSQL](https://www.postgresql.org/)
 - API: [Node.js](https://nodejs.org/en/)
 - Interface: Página Web (HTML, CSS e JavaScript)
+
+<hr>
+
+### Fonte dos dados
+Os dados a serem coletados para o processo de BI são públicos e disponibilizados na <a href="http://revistas.inpi.gov.br/rpi" target="_blank">Revista da Propriedade Industrial</a>. O INPI divulga semanalmente, toda terça-feira, os dados de atualização sobre os processos de registros de marcas, tanto no formato pdf quanto em XML. Neste trabalho, foi avaliado que o arquivo XML contém as principais informações de despachos do INPI, e servirá como origem dos dados para o processo de ETL.
+
+Vale destacar que o arquivo XML tem dezenas de milhares de despachos, e entre 20 e 40 MB.
 
 <hr>
 
@@ -161,6 +152,15 @@ A desenvolver
 ### Criação do banco de dados
 
 A desenvolver
+
+<hr>
+
+### Extração, transformação e carga dos dados
+O processo central do trabalho, o ETL, segue algumas etapas importantes para o alcance do objetivo de geração do banco de dados devidamente carregado. Abaixo, um diagrama sobre este fluxo:
+
+[INSERIR DIAGRAMA]
+
+Fonte dos dados (XML semanal de marcas da Revista de Propriedade Industrial) → Coleta dos dados → Transformações dos dados (conteúdos das tags do XML para formato tabular) → carga (inserção de registros no banco de dados).
 
 <hr>
 
