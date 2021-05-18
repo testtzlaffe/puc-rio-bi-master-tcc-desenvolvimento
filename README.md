@@ -28,7 +28,7 @@ Entre suas funções, o INPI é responsável pelo registro e concessão de marca
 
 O diagrama abaixo resume as etapas do processo, bem como a arquitetura da solução e indicação das tecnologias:
 
-<img src="Arquitetura.png" alt="imagem da arquitetura da solução" />
+<img src="/imagens/Arquitetura.png" alt="imagem da arquitetura da solução" />
 
 - Fonte dos dados: arquivos XML do site do INPI
 - Mapeamento dos dados: estudo das principais tags e atributos do arquivo, bem como suas relações
@@ -151,7 +151,7 @@ Partindo do mapeamento dos dados da etapa anterior, foi possível identificar qu
 
 Segue abaixo o modelo construído até o momento no SQL Power Architect:
 
-<img src="Modelo-BD.png" alt="imagem do modelo do banco de dados" />
+<img src="/imagens/Modelo-BD.png" alt="imagem do modelo do banco de dados" />
 
 <hr>
 
@@ -159,7 +159,7 @@ Segue abaixo o modelo construído até o momento no SQL Power Architect:
 
 O banco de dados utiliza com sistema gerenciador (SGBD) o PostgreSQL. A criação das tabelas foi originada diretamente do SQL Power Architect, tomando como base o modelo desenhado. Abaixo, o exemplo de resultado da criação da tabela "revistas", na ferramenta pgAdmin:
 
-<img src="Postgres.png" alt="imagem do postgreSQL" />
+<img src="/imagens/Postgres.png" alt="imagem do postgreSQL" />
 
 <hr>
 
