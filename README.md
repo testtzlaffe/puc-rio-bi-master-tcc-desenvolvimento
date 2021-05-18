@@ -166,23 +166,37 @@ O banco de dados utiliza com sistema gerenciador (SGBD) o PostgreSQL. A criaçã
 ### Extração, transformação e carga dos dados
 O processo central do trabalho, o ETL, segue algumas etapas importantes para o alcance do objetivo de geração do banco de dados devidamente carregado. 
 
-Extração: 
+Extração: etapa de coleta / extração dos recursos de dados. Neste trabalho, a extração é responsável pelo download, descompactação dos arquivos zipados, leitura do XML e loop sobre as tags importantes para obtenção dos dados.
 
-Transformação:
+Transformação: tratamento dos dados brutos, formatações e adequações do conteúdo dos campos. Aqui foram realizadas operações sobre textos (strings), formatações de datas, seleção de valores, entre outros.
 
-Carga:
+Carga: etapa final do ETL, persiste os dados no repositório de destino. No caso deste projeto, cada conjunto de dados extraídos e transformados para cada entidade, são carregados para o PostgreSQL de forma que semanalmente os registros de processos de marcas estejam sempre atualizados.
 
-<hr>
+No Pentaho Data Integration (PDI) foi implementado um fluxo (job) de etapas de extração dos dados, transformações / formatações / preparação dos campos, e a carga para cada tabela no PostgreSQL, conforme tela abaixo.
 
-### Transformação com PDI
+Em resumo, há um disparador do processo, que pode ser agendado para toda terça-feira em determinado horário. Logo em seguida a etapa "unzip file" extrai o xml do arquivo compactado no diretório definido. Segue com o job organizando uma sequência de chamadas às "transformations" desenvolvidas para cada tabela do banco de dados. Por fim, move os arquivos zipados para uma pasta auxiliar de histórico, deleta o xml utilizado, limpando a pasta para a carga da semana seguinte.
 
-A desenvolver
+<img src="/imagens/job-pdi.png" alt="Tela do job no PDI" />
 
-<hr>
+Transformation - Revistas:
 
-### Carga dos dados
+<img src="/imagens/pdi-transformation-revistas.png" alt="Tela do PDI Transformation - Revistas" />
 
-A desenvolver
+Transformation - Processos:
+
+<img src="/imagens/pdi-transformation-processos.png" alt="Tela do PDI Transformation - Processos" />
+
+Transformation - Marcas:
+
+<img src="/imagens/pdi-transformation-marcas.png" alt="Tela do PDI Transformation - Marcas" />
+
+Transformation - Despachos:
+
+<img src="/imagens/pdi-transformation-despachos.png" alt="Tela do PDI Transformation - Despachos" />
+
+Transformation - Titulares:
+
+<img src="/imagens/pdi-transformation-titulares.png" alt="Tela do PDI Transformation - Titulares" />
 
 <hr>
 
