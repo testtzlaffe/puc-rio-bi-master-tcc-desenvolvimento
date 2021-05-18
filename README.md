@@ -1,6 +1,6 @@
 # TCC | BI Master | PUC-Rio
 
-## [EM DESENVOLVIMENTO] Processo de BI para acompanhamento de registros de marcas no INPI
+## [EM DESENVOLVIMENTO] Construção de processo de ETL para acompanhamento de registros de marcas no INPI
 
 Christian Testtzlaffe Alpoim ([Linkedin](https://www.linkedin.com/in/christian-testtzlaffe-alpoim/))
 
