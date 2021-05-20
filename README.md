@@ -182,6 +182,10 @@ Transformation - Revistas:
 
 <img src="/imagens/pdi-transformation-revistas.png" alt="Tela do PDI Transformation - Revistas" />
 
+Transformation - Tipos de Despachos:
+
+<img src="/imagens/pdi-transformation-tipos-despachos.png" alt="Tela do PDI Transformation - Tipos de Despacho" />
+
 Transformation - Processos:
 
 <img src="/imagens/pdi-transformation-processos.png" alt="Tela do PDI Transformation - Processos" />
@@ -197,6 +201,10 @@ Transformation - Despachos:
 Transformation - Titulares:
 
 <img src="/imagens/pdi-transformation-titulares.png" alt="Tela do PDI Transformation - Titulares" />
+
+Transformation - Classes Nice:
+
+<img src="/imagens/pdi-transformation-classes-nice.png" alt="Tela do PDI Transformation - Classes Nice" />
 
 <hr>
 
