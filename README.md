@@ -206,6 +206,16 @@ Transformation - Classes Nice:
 
 <img src="/imagens/pdi-transformation-classes-nice.png" alt="Tela do PDI Transformation - Classes Nice" />
 
+<br>
+
+Foram efetuadas cargas com sucesso de 54 revistas sobre marcas, equivalente a 1 ano de acompanhamento. Estas cargas persistiram mais de 1 milhão de despachos e mais de 700 mil processos. Em torno de 940MB.
+
+<img src="/imagens/count-despachos.png" alt="Tela do PostgreAQL - count-despachos" />
+
+<img src="/imagens/count-distinct-processos.png" alt="Tela do PostgreAQL - count distinct processos" />
+
+<img src="/imagens/pg_size_pretty.png" alt="Tela do PostgreAQL - pg size pretty" />
+
 <hr>
 
 ### Construção da API
