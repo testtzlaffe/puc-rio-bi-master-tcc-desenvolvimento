@@ -87,7 +87,11 @@ Carga: etapa final do ETL, persiste os dados no repositório de destino. No caso
 
 No Pentaho Data Integration (PDI) foi implementado um fluxo (job) de etapas de extração dos dados, transformações / formatações / preparação dos campos, e a carga para cada tabela no PostgreSQL, conforme tela abaixo.
 
-Em resumo, há um disparador do processo, que pode ser agendado para toda terça-feira em determinado horário. Logo em seguida a etapa "unzip file" extrai o xml do arquivo compactado no diretório definido. Segue com o job organizando uma sequência de chamadas às "transformations" desenvolvidas para cada tabela do banco de dados. Por fim, move os arquivos zipados para uma pasta auxiliar de histórico, deleta o xml utilizado, limpando a pasta para a carga da semana seguinte.
+O processo foi agendado no "Agendador de Tarefas" do Windows, para executar toda terça-feira às 11h. São duas execuções agendadas: 1) download do arquivo .zip do site do INPI; 2) job configurado no PDI.
+
+Para o download, foi desenvolvido um [script em python](/script-download-revistas), que define qual o número atual da revista e baixa o arquivo para determinada pasta.
+
+Já para a fase do job no PDI, a primeira etapa é "unzip file", que extrai o xml do arquivo compactado no diretório definido. Segue com o job organizando uma sequência de chamadas às "transformations" desenvolvidas para cada tabela do banco de dados. Por fim, move os arquivos zipados para uma pasta auxiliar de histórico, deleta o xml utilizado, limpando a pasta para a carga da semana seguinte.
 
 [Telas do job e das transformações](/anexos/transformacoes.md)
 
