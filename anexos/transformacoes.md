@@ -1,5 +1,9 @@
 [< VOLTAR PARA README](/README.md#extra%C3%A7%C3%A3o-transforma%C3%A7%C3%A3o-e-carga-dos-dados)
 
+### Job no PDI
+
+<img src="/imagens/job-pdi.png" alt="Tela do job no PDI" />
+
 ### Transformações no PDI
 
 <br>
