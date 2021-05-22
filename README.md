@@ -82,17 +82,13 @@ Classes Vienna e Nice: são classificações de atividades que a marca está atr
 
 Partindo do mapeamento dos dados da etapa anterior, foi possível identificar quais as entidades mais importantes para o modelo do banco de dados. Basicamente, há as seguintes entidades: revistas, despachos, processos, titulares e marcas (com auxílio das tabelas natureza_marca e apresentacao_marca).
 
-Segue abaixo o modelo construído até o momento no SQL Power Architect:
-
-<img src="/imagens/Modelo-BD.png" alt="imagem do modelo do banco de dados" />
+[Modelo Relacional](/anexos/modelo.md)
 
 <hr>
 
 ### Criação do banco de dados
 
-O banco de dados utiliza com sistema gerenciador (SGBD) o PostgreSQL. A criação das tabelas foi originada diretamente do SQL Power Architect, tomando como base o modelo desenhado. Abaixo, o exemplo de resultado da criação da tabela "revistas", na ferramenta pgAdmin:
-
-<img src="/imagens/Postgres.png" alt="imagem do postgreSQL" />
+O banco de dados utiliza com sistema gerenciador (SGBD) o PostgreSQL. A criação das tabelas foi originada diretamente do SQL Power Architect, tomando como base o modelo desenhado.
 
 <hr>
 
@@ -114,16 +110,6 @@ Em resumo, há um disparador do processo, que pode ser agendado para toda terça
 [Telas de cada transformação](/anexos/transformacoes.md)
 
 Foram efetuadas cargas com sucesso de 54 revistas sobre marcas, equivalente a 1 ano de acompanhamento. Estas cargas persistiram mais de 1 milhão de despachos e mais de 700 mil processos. Em torno de 940MB.
-
-<img src="/imagens/count-despachos.png" alt="Tela do PostgreSQL - count-despachos" />
-
-<img src="/imagens/count-distinct-processos.png" alt="Tela do PostgreSQL - count distinct processos" />
-
-<img src="/imagens/pg_size_pretty.png" alt="Tela do PostgreSQL - pg size pretty" />
-
-Tela (pgAdmin) dos 7 primeiros registros da tabela de revistas:
-
-<img src="/imagens/postgres-revistas.png" alt="Tela do PostgreSQL - 7 primeiras revistas" />
 
 <hr>
 
