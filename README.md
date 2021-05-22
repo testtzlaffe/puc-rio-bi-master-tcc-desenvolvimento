@@ -111,33 +111,7 @@ Em resumo, há um disparador do processo, que pode ser agendado para toda terça
 
 <img src="/imagens/job-pdi.png" alt="Tela do job no PDI" />
 
-Transformation - Revistas:
-
-<img src="/imagens/pdi-transformation-revistas.png" alt="Tela do PDI Transformation - Revistas" />
-
-Transformation - Tipos de Despachos:
-
-<img src="/imagens/pdi-transformation-tipos-despachos.png" alt="Tela do PDI Transformation - Tipos de Despacho" />
-
-Transformation - Processos:
-
-<img src="/imagens/pdi-transformation-processos.png" alt="Tela do PDI Transformation - Processos" />
-
-Transformation - Marcas:
-
-<img src="/imagens/pdi-transformation-marcas.png" alt="Tela do PDI Transformation - Marcas" />
-
-Transformation - Despachos:
-
-<img src="/imagens/pdi-transformation-despachos.png" alt="Tela do PDI Transformation - Despachos" />
-
-Transformation - Titulares:
-
-<img src="/imagens/pdi-transformation-titulares.png" alt="Tela do PDI Transformation - Titulares" />
-
-Transformation - Classes Nice:
-
-<img src="/imagens/pdi-transformation-classes-nice.png" alt="Tela do PDI Transformation - Classes Nice" />
+[Telas de cada transformação](/anexos/transformacoes.md)
 
 Foram efetuadas cargas com sucesso de 54 revistas sobre marcas, equivalente a 1 ano de acompanhamento. Estas cargas persistiram mais de 1 milhão de despachos e mais de 700 mil processos. Em torno de 940MB.
 
