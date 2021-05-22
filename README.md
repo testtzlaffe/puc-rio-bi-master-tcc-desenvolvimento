@@ -33,10 +33,8 @@ O diagrama abaixo resume as etapas do processo, bem como a arquitetura da soluç
 - Fonte dos dados: arquivos XML do site do INPI
 - Mapeamento dos dados: estudo das principais tags e atributos do arquivo, bem como suas relações
 - Modelagem dos dados: desenhar o modelo de tabelas e seus relacionamentos, com uso do [SQL Power Architect](http://www.bestofbi.com/page/architect)
-- BD (banco de dados): criação e atualização das tabelas por meio do [PostgreSQL](https://www.postgresql.org/)
-- ETL: extrações, transformações e cargas com [Pentaho Data Integration (PDI)](https://help.pentaho.com/Documentation/7.1/0D0/Pentaho_Data_Integration)
-- API (Application Programming Interface): construção do backend da solução com [Node.js](https://nodejs.org/en/)
-- Interface: solução web com utilização das tecnologias HTML, CSS e JavaScript
+- BD (banco de dados): criação e atualização das tabelas por meio do [PostgreSQL](https://www.postgresql.org/). O PostgreSQL foi definido como o sistema gerenciador de banco de dados relacional do projeto, por ser de código aberto, com mais de 30 anos de desenvolvimento. Tem uma boa reputação e é amplamente utilizada pelo mercado, com arquitetura comprovada, confiável, com recursos robustos. Além disso, pode ser executado em todos os principais sistemas operacionais.
+- ETL: extrações, transformações e cargas com [Pentaho Data Integration (PDI)](https://help.pentaho.com/Documentation/7.1/0D0/Pentaho_Data_Integration). O PDI inúmeras funcionalidade de ETL que facilitam a coleta, limpeza, transformações e persistência dos dados. É bem simples de utilizar, e tem integração com vários formatos de entrada (se mostrou capaz de carregar milhares de registros de um arquivo XML) e com vários sistemas gerenciadores de banco de dados, inclusive PostgreSQL. Apesar dos tamanhos dos arquivos deste trabalho, atendeu bem a conclusão de ETL semanal em poucos minutos. Permite agendar processos para executarem automaticamente, bem como gerar alertas de finalização ou falhas. Pentaho Data Integration é amplamente utilizada por diversos tipos de empresas, entre elas: instituições financeiras, indústrias, órgãos dos governos federal, estaduais e prefeituras, entidades de saúde, universidades, entre outras.
 
 <hr>
 
