@@ -60,27 +60,11 @@ Além das tags, alguns nós do XML têm atributos, por exemplo: na tag "titular"
 
 [Tabela de tags e atributos do XML](/anexos/tabela-tags-atributos.md)
 
-<details><summary>Tags fundamentais para este trabalho</summary>
-<br>
-Revista: cada semana, o INPI disponibiliza uma revista, e esta tag do XML indica o número e a data da divulgação.
-
-Processo: primeira tag após o nó da revista. Há dezenas de milhares de processos por revista/semana. Tem como atributos o número do processo, e em algumas situações, traz a data de depósito, a data de concessão e a data de vigência de uso da marca.
-
-Marca: em alguns tipos de registros, esta tag aparece indicando o nome da marca, a natureza e a apresentação (nominativa, figurativa ou mista).
-
-Despachos: junto com o processo, os depachos são as principais informações do arquivo. No despacho é que está a descrição do que aconteceu no processo naquela semana (com código de despacho), e em alguns casos traz observações (texto-complementar ou texto-sobrestamento).
-
-Titulares: lista os nomes, estados e países dos titulares da marca.
-
-Classes Vienna e Nice: são classificações de atividades que a marca está atrelada. 
-
-</details>
-
 <hr>
 
 ### Modelagem das tabelas e campos
 
-Partindo do mapeamento dos dados da etapa anterior, foi possível identificar quais as entidades mais importantes para o modelo do banco de dados. Basicamente, há as seguintes entidades: revistas, despachos, processos, titulares e marcas (com auxílio das tabelas natureza_marca e apresentacao_marca).
+Partindo do mapeamento dos dados da etapa anterior, foi possível identificar quais as entidades mais importantes para o modelo do banco de dados. Basicamente, o escopo envolverá as seguintes entidades: revistas, despachos, processos, titulares e marcas (com auxílio das tabelas natureza_marca e apresentacao_marca) e classes-nice (com tabela auxiliar de tipos de classe).
 
 [Modelo Relacional](/anexos/modelo.md)
 
