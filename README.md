@@ -51,10 +51,12 @@ O PDI também auxiliou na listagem de todas as tags e nós do arquivo XML (no ex
 
 Além das tags, alguns nós do XML têm atributos, por exemplo: na tag "titular", há atributos como nome, país e UF do titular da marca.
 
+[Exemplo de um processo/despacho no XML](/anexos/exemplo-processo-xml.md)
+
 [Tabela de tags e atributos do XML](/anexos/tabela-tags-atributos.md)
 
-As tags mais importantes para este trabalho são:
-
+<details><summary>Tags fundamentais para este trabalho</summary>
+<br>
 Revista: cada semana, o INPI disponibiliza uma revista, e esta tag do XML indica o número e a data da divulgação.
 
 Processo: primeira tag após o nó da revista. Há dezenas de milhares de processos por revista/semana. Tem como atributos o número do processo, e em algumas situações, traz a data de depósito, a data de concessão e a data de vigência de uso da marca.
@@ -67,7 +69,7 @@ Titulares: lista os nomes, estados e países dos titulares da marca.
 
 Classes Vienna e Nice: são classificações de atividades que a marca está atrelada. 
 
-[Exemplo de um processo/despacho no XML](/anexos/exemplo-processo-xml.md)
+</details>
 
 <hr>
 
