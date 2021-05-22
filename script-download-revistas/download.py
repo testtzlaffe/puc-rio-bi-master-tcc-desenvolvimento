@@ -10,7 +10,7 @@ semanas = int(dias / 7)
 numero_da_revista_atual = str(numero_da_revista_no_dia_0 + semanas)
 
 url = 'http://revistas.inpi.gov.br/txt/RM' + numero_da_revista_atual + '.zip'
-path = 'D:\\shared-projects\\BI-Master\\TCC\\revistas-zipadas\\RM'
+path = '<INSIRA O CAMINHO PARA A PASTA QUE ARMAZENARÁ OS ARQUIVOS .ZIP>\\RM'
 
 r = requests.get(url)
 open(path + numero_da_revista_atual + '.zip', 'wb').write(r.content)
