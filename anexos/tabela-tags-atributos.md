@@ -1,5 +1,6 @@
-### Tabela de mapeamento de tags e atributos do XML:
+[< VOLTAR PARA README](/README.md)
 
+### Tabela de mapeamento de tags e atributos do XML:
 
 <table>
 <tr><th>TAG</th><th style="width: 50px;">CAMINHO</th><th>ATRIBUTOS</th><th>CONTÉM TEXTO INTERNO?</th></tr>
