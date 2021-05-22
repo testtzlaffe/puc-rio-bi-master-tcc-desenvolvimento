@@ -114,35 +114,8 @@ Titulares: lista os nomes, estados e países dos titulares da marca.
 
 Classes Vienna e Nice: são classificações de atividades que a marca está atrelada. 
 
-Abaixo, um exemplo de processo no arquivo XML:
+[Exemplo de um processo/despacho no XML](/anexos/exemplo-processo-xml.md)
 
-```xml
-<processo numero="920493416" data-deposito="19/08/2020">
-    <despachos>
-      <despacho codigo="IPAS421" nome="Republicação de pedido">
-        <texto-complementar>Republicado o pedido, tendo em vista alteração da classe internacional reivindicada para fins de adequação da mesma à especificação apresentada.</texto-complementar>
-      </despacho>
-    </despachos>
-    <titulares>
-      <titular nome-razao-social="PABLO SILVA NEVES" pais="BR" uf="MG"/>
-    </titulares>
-    <marca apresentacao="Mista" natureza="Produtos e/ou Serviço">
-      <nome>ESTUDIO CAR DETALHAMENTO</nome>
-    </marca>
-    <classes-vienna>
-      <classe-vienna codigo="18.1.9" edicao="4"/>
-    </classes-vienna>
-    <lista-classe-nice>
-      <classe-nice codigo="37">
-        <especificacao>Lavagem de Veículos, Limpeza de Veículos e Polimento de Veículos. Lavador e Polidor&#xd;
-de carro independente, serviço de Lavagem, lubrificação e polimento de veículos&#xd;
-automotores. Detalhamento em veículos automotroes.; </especificacao>
-        <status>Pendente (com especificação livre)</status>
-      </classe-nice>
-    </lista-classe-nice>
-  </processo>
-
-```
 <hr>
 
 ### Modelagem das tabelas e campos
