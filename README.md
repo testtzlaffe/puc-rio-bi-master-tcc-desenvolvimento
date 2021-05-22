@@ -51,15 +51,9 @@ Vale destacar que o arquivo XML tem dezenas de milhares de despachos, cada um em
 
 O PDI também auxiliou na listagem de todas as tags e nós do arquivo XML (no exemplo, revista nº 2625). Por meio da etapa "Get data from XML" na ferramenta, na funcionalidade "Get XPath nodes", é possível visualizar todos os nós (tags) presentes no arquivo:
 
-Imagem do resultado do "Get XPath nodes":
-
-<img src="https://user-images.githubusercontent.com/50345995/117891809-f5dd8380-b28d-11eb-972f-e74456b2ea59.png" alt="imagem do Get XPath nodes" />
-
 Além das tags, alguns nós do XML têm atributos, por exemplo: na tag "titular", há atributos como nome, país e UF do titular da marca.
 
 [Tabela de tags e atributos do XML](/anexos/tabela-tags-atributos.md)
-
-<br>
 
 As tags mais importantes para este trabalho são:
 
@@ -154,20 +148,12 @@ Tela (pgAdmin) dos 7 primeiros registros da tabela de revistas:
 
 <hr>
 
-### Construção da API
-
-A desenvolver
-
-<hr>
-
-### Construção da interface web
-
-A desenvolver
-
-<hr>
-
 ### Resultados e conclusões
 
-A desenvolver
+A sequência de etapas acima atingiu o objetivo do trabalho de construir um fluxo automatizado, que semanalmente realiza o ETL, que culmina na persistência dos dados no Postgres. 
+
+O arsenal de tecnologias utilizadas se mostrou capaz de garantir esta carga, mesmo com a quantidade de mais de 1 milhão de despachos por ano.
+
+Este resultado permite que o projeto evolua por exemplo para a conexão de uma API e uma interface web a fim de disponibilizar serviços de acompanhamento de processos de registros de marca no INPI e de alertas sobre atualizações de despachos.
 
 
