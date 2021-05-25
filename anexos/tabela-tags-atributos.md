@@ -30,7 +30,7 @@
 <tr><td>traducao-especificacao</td><td>/revista/processo/lista-classe-nice/classe-nice/traducao-especificacao</td><td></td><td>Sim</td></tr>
 <tr><td>status</td><td>/revista/processo/lista-classe-nice/classe-nice/status</td><td></td><td>Sim</td></tr>
 <tr><td>classes-vienna</td><td>/revista/processo/classes-vienna</td><td></td><td></td></tr>
-<tr><td>classe-vienna</td><td>/revista/processo/classes-vienna/classe-viena</td><td>codigo, edicao</td><td></td></tr>
+<tr><td>classe-vienna</td><td>/revista/processo/classes-vienna/classe-vienna</td><td>codigo, edicao</td><td></td></tr>
 <tr><td>classe-nacional</td><td>/revista/processo/classe-nacional</td><td>codigo</td><td></td></tr>
 <tr><td>especificacao</td><td>/revista/processo/classe-nacional/especificacao</td><td></td><td>Sim</td></tr>
 <tr><td>sub-classes-nacional</td><td>/revista/processo/classe-nacional/sub-classes-nacional</td><td></td><td></td></tr>
