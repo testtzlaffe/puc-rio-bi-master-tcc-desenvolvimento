@@ -1,3 +1,5 @@
+[< VOLTAR PARA README](/README.md#extra%C3%A7%C3%A3o-transforma%C3%A7%C3%A3o-e-carga-dos-dados)
+
 ## Script python para download das Revistas de Propriedade Industrial
 
 Este código foi desenvolvido para ser executado semanalmente, toda terça-feira, para realizar o download dos arquivos .zip referentes às Revistas de Propriedade Industrial do INPI.
