@@ -77,23 +77,22 @@ O banco de dados utiliza com sistema gerenciador (SGBD) o PostgreSQL. A criaçã
 <hr>
 
 ### Extração, transformação e carga dos dados
+
 O processo central do trabalho, o ETL, segue algumas etapas importantes para o alcance do objetivo de geração do banco de dados devidamente carregado. 
 
-Extração: etapa de coleta / extração dos recursos de dados. Neste trabalho, a extração é responsável pelo download, descompactação dos arquivos zipados, leitura do XML e loop sobre as tags importantes para obtenção dos dados.
+**Extração:** etapa de coleta / extração dos recursos de dados. Neste trabalho, a extração é responsável pelo download, descompactação dos arquivos zipados, leitura do XML e loop sobre as tags importantes para obtenção dos dados.
 
-Transformação: tratamento dos dados brutos, formatações e adequações do conteúdo dos campos. Aqui foram realizadas operações sobre textos (strings), formatações de datas, seleção de valores, entre outros.
+**Transformação:** tratamento dos dados brutos, formatações e adequações do conteúdo dos campos. Aqui foram realizadas operações sobre textos (strings), formatações de datas, seleção de valores, entre outros.
 
-Carga: etapa final do ETL, persiste os dados no repositório de destino. No caso deste projeto, cada conjunto de dados extraídos e transformados para cada entidade, são carregados para o PostgreSQL de forma que semanalmente os registros de processos de marcas estejam sempre atualizados.
+**Carga:** etapa final do ETL, persiste os dados no repositório de destino. No caso deste projeto, cada conjunto de dados extraídos e transformados para cada entidade, são carregados para o PostgreSQL de forma que semanalmente os registros de processos de marcas estejam sempre atualizados.
 
-No Pentaho Data Integration (PDI) foi implementado um fluxo (job) de etapas de extração dos dados, transformações / formatações / preparação dos campos, e a carga para cada tabela no PostgreSQL, conforme tela abaixo.
+Para que seja executado sem necessidade de ação manual, foi configurado no "Agendador de Tarefas" do Windows, para toda terça-feira às 11h, duas execuções: 1) download do arquivo .zip do site do INPI; 2) job configurado no PDI (executado em background).
 
-O processo foi agendado no "Agendador de Tarefas" do Windows, para executar toda terça-feira às 11h. São duas execuções agendadas: 1) download do arquivo .zip do site do INPI; 2) job configurado no PDI.
+Para o download, foi desenvolvido um [script em python](/script-download-revistas), que define qual o número atual da revista e baixa o arquivo para determinada pasta. Esta etapa é disparada automaticamente pelo "Agendador de Tarefas" do Windows.
 
-Para o download, foi desenvolvido um [script em python](/script-download-revistas), que define qual o número atual da revista e baixa o arquivo para determinada pasta.
+No Pentaho Data Integration (PDI) foi implementado um fluxo (job) de etapas de extração dos dados, transformações / formatações / preparação dos campos, e a carga para cada tabela no PostgreSQL, conforme [telas (job e transformations)](/anexos/transformacoes.md).
 
-Já para a fase do job no PDI, a primeira etapa é "unzip file", que extrai o xml do arquivo compactado no diretório definido. Segue com o job organizando uma sequência de chamadas às "transformations" desenvolvidas para cada tabela do banco de dados. Por fim, move os arquivos zipados para uma pasta auxiliar de histórico, deleta o xml utilizado, limpando a pasta para a carga da semana seguinte.
-
-[Telas do job e das transformações](/anexos/transformacoes.md)
+A primeira tarefa do job é "unzip file", que extrai o xml do arquivo compactado no diretório definido. Segue com o job organizando uma sequência de chamadas às "transformations" desenvolvidas para cada tabela do banco de dados. Por fim, move os arquivos zipados para uma pasta auxiliar de histórico, deleta o xml utilizado, limpando a pasta para a carga da semana seguinte.
 
 Foram efetuadas cargas com sucesso de 54 revistas sobre marcas, equivalente a 1 ano de acompanhamento. Estas cargas persistiram mais de 1 milhão de despachos e mais de 700 mil processos. Em torno de 940MB.
 
@@ -101,10 +100,10 @@ Foram efetuadas cargas com sucesso de 54 revistas sobre marcas, equivalente a 1 
 
 ### Resultados e conclusões
 
-A sequência de etapas acima atingiu o objetivo do trabalho de construir um fluxo automatizado, que semanalmente realiza o ETL, que culmina na persistência dos dados no Postgres. 
+A sequência de etapas acima atingiu o objetivo do trabalho de construir um fluxo automatizado, que semanalmente realiza o ETL e que culmina na persistência dos dados no Postgres. 
 
-O arsenal de tecnologias utilizadas se mostrou capaz de garantir esta carga, mesmo com a quantidade de mais de 1 milhão de despachos por ano.
+O conjunto de de tecnologias utilizadas se mostrou capaz de garantir esta carga, mesmo com a quantidade de mais de 1 milhão de despachos por ano.
 
-Este resultado permite que o projeto evolua por exemplo para a conexão de uma API e uma interface web a fim de disponibilizar serviços de acompanhamento de processos de registros de marca no INPI e de alertas sobre atualizações de despachos.
+Este resultado permite que o projeto evolua por exemplo para soluções web ou mobile a fim de disponibilizar serviços de acompanhamento de processos de registros de marca no INPI e de alertas sobre atualizações de despachos, fundamentadas nos dados gravados.
 
 
