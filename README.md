@@ -62,9 +62,9 @@ Além das tags, alguns nós do XML têm atributos, por exemplo: na tag "titular"
 
 <hr>
 
-### Modelagem das tabelas e campos
+### Modelagem das tabelas e dos campos
 
-Partindo do mapeamento dos dados da etapa anterior, foi possível identificar quais as entidades mais importantes para o modelo do banco de dados. Basicamente, o escopo envolverá as seguintes entidades: revistas, despachos, processos, titulares e marcas (com auxílio das tabelas natureza_marca e apresentacao_marca) e classes-nice (com tabela auxiliar de tipos de classe).
+Partindo do mapeamento dos dados da etapa anterior, foi possível identificar quais as entidades mais importantes para o modelo do banco de dados. Basicamente, o escopo envolve: revista, processo, marca, titular, procurador, despacho, classe-nice e classe-vienna.
 
 [Modelo Relacional](/anexos/modelo.md)
 
