@@ -2,6 +2,6 @@
 
 ### Modelo Relacional
 
-Abaixo, tela do SQL Power Architect com o modelo:
+Tela do modelo no SQL Power Architect:
 
 <img src="/imagens/Modelo-BD.png" alt="imagem do modelo do banco de dados" />
