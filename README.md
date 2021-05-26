@@ -44,17 +44,16 @@ O diagrama abaixo resume as etapas do processo, bem como a arquitetura da soluç
 <hr>
 
 ### Fonte dos dados
-Os dados a serem coletados para o processo de BI são públicos e disponibilizados na <a href="http://revistas.inpi.gov.br/rpi" target="_blank">Revista da Propriedade Industrial</a>. O INPI divulga semanalmente, toda terça-feira, os dados de atualização sobre os processos de registros de marcas, tanto no formato pdf quanto em XML. Neste trabalho, foi avaliado que o arquivo XML contém as principais informações de despachos do INPI, e servirá como origem dos dados para o processo de ETL.
 
-Vale destacar que o arquivo XML tem dezenas de milhares de despachos, cada um em torno de 20 a 30 MB.
+Os dados a serem coletados para o processo são públicos e disponibilizados na <a href="http://revistas.inpi.gov.br/rpi" target="_blank">Revista da Propriedade Industrial (RPI)</a>. O INPI divulga semanalmente, toda terça-feira, as atualizações sobre os registros de marcas, tanto no formato PDF quanto em XML (compactado/zipado). Para este trabalho, foi avaliado que o arquivo XML contém as principais informações de despachos do INPI, e servirá como base para o processo de ETL. Vale destacar que este arquivo, quando descompactado, tem entre 20 e 30MB, com dezenas de milhares de despachos.
 
 <hr>
 
 ### Mapeamento dos dados
 
-O PDI também auxiliou na listagem de todas as tags e nós do arquivo XML (no exemplo, revista nº 2625). Por meio da etapa "Get data from XML" na ferramenta, na funcionalidade "Get XPath nodes", é possível visualizar todos os nós (tags) presentes no arquivo:
+Inicialmente, foi necessário o estudo dos dados de registro de marcas no INPI. Foram avaliadas minuciosamente algumas Revistas de Propriedade Industrial, tanto na versão XML quanto em PDF. No XML, há diversos nós (tags) e atributos, alguns sempre presentes, e outros aparecem a depender do tipo de despacho.
 
-Além das tags, alguns nós do XML têm atributos, por exemplo: na tag "titular", há atributos como nome, país e UF do titular da marca.
+Como exemplo, há a tag "titular". Nela estão presentes os atributos nome, país e UF do titular da marca. A UF é preenchida apenas quando o país é BR (Brasil).
 
 [Exemplo de um processo/despacho no XML](/anexos/exemplo-processo-xml.md)
 
