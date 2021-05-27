@@ -1,6 +1,6 @@
 # TCC | BI Master | PUC-Rio
 
-## [EM DESENVOLVIMENTO] Construção de processo automatizado de extração, transformação e carga de dados para acompanhamento de registros de marcas no INPI
+## Construção de processo automatizado de extração, transformação e carga de dados para acompanhamento de registros de marcas no INPI
 
 Christian Testtzlaffe Alpoim ([Linkedin](https://www.linkedin.com/in/christian-testtzlaffe-alpoim/))
 
@@ -11,16 +11,6 @@ Christian Testtzlaffe Alpoim ([Linkedin](https://www.linkedin.com/in/christian-t
 ### Objetivo
 
 Este trabalho tem o objetivo de construir um fluxo automatizado de coleta, transformação e carga/persistência de dados dos processos de registros de marcas originados pelo [Instituto Nacional de Propriedade Industrial (INPI)](https://www.gov.br/inpi/pt-br). Antes deste processo de extração, transformação e carga (ETL), é necessário o mapeamento dos dados, a modelagem e a criação do repositório destes registros (banco de dados relacional). Uma vez que o processo esteja configurado e sendo executado periodicamente, este banco de dados permitirá a construção de aplicações para acompanhamento e alerta sobre o avanço nos registros de marcas.
-
-<hr>
-
-### INPI
-
-O Instituto Nacional da Propriedade Industrial (INPI) é uma autarquia federal brasileira, criada em 1970, vinculada ao Ministério do Desenvolvimento, Indústria e Comércio Exterior (MDIC).
-
-Conforme art. 2º da Lei nº 5.648/1970, "O INPI tem por finalidade principal executar, no âmbito nacional, as normas que regulam a propriedade industrial, tendo em vista a sua função social, econômica, jurídica e técnica, bem como pronunciar-se quanto à conveniência de assinatura, ratificação e denúncia de convenções, tratados, convênios e acordos sobre propriedade industrial". (Redação dada pela Lei nº 9.279, de 1996).
-
-Entre suas funções, o INPI é responsável pelo registro e concessão de marcas, que é a base para este trabalho.
 
 <hr>
 
@@ -36,8 +26,8 @@ O diagrama abaixo resume as etapas do processo, bem como a arquitetura da soluç
   <ul>
     <li><strong>Fonte dos dados:</strong> arquivos XML do site do INPI.</li>
     <li><strong>Mapeamento dos dados:</strong> estudo das principais tags e atributos do arquivo, bem como suas relações.</li>
-    <li><strong>Modelagem dos dados:</strong> desenho do modelo de tabelas e seus relacionamentos, com uso do <a href="http://www.bestofbi.com/page/architect">SQL Power Architect</a>. Por meio do Power Architect, é relativamente simples modelar as entidades e as relações, sendo uma ferramenta bastante utilizada por administradores de banco de dados. Além disso, tem integração com diversos sistemas gerenciadores de BD, inclusive o PostgreSQL, utilizado neste trabalho.</li>
-    <li><strong>BD (banco de dados):</strong> criação e atualização das tabelas por meio do <a href="https://www.postgresql.org/">PostgreSQL</a>. O PostgreSQL foi definido como o sistema gerenciador de banco de dados do projeto, por ser de código aberto, com mais de 30 anos de desenvolvimento. Tem uma boa reputação e é amplamente utilizada pelo mercado, com arquitetura comprovada, confiável e com recursos robustos. Além disso, pode ser executado em todos os principais sistemas operacionais.</li>
+    <li><strong>Modelagem dos dados:</strong> desenho do modelo de tabelas e seus relacionamentos, com uso do <a href="http://www.bestofbi.com/page/architect">SQL Power Architect</a>. Por meio do Power Architect, é relativamente simples modelar as entidades e suas relações, sendo uma ferramenta bastante utilizada por profissionais especialistas em banco de dados. Além disso, tem integração com diversos sistemas gerenciadores de BD, inclusive o PostgreSQL, utilizado neste trabalho.</li>
+    <li><strong>BD (banco de dados):</strong> criação e atualização das tabelas por meio do <a href="https://www.postgresql.org/">PostgreSQL</a>. O PostgreSQL foi definido como o sistema gerenciador de banco de dados do projeto, por ser de código aberto, com mais de 30 anos de desenvolvimento. Tem uma boa reputação e é amplamente utilizado pelo mercado, com arquitetura comprovada, confiável e com recursos robustos. Além disso, pode ser executado em todos os principais sistemas operacionais.</li>
     <li><strong>ETL:</strong> extrações, transformações e cargas com <a href="https://help.pentaho.com/Documentation/7.1/0D0/Pentaho_Data_Integration">Pentaho Data Integration (PDI)</a>. O PDI tem inúmeras funcionalidade de ETL que facilitam a coleta, a limpeza, as transformações e a persistência dos dados. É intuitivo na utilização, e tem integração com vários formatos de entrada e com diversos sistemas gerenciadores de banco de dados, inclusive PostgreSQL. Permite agendar processos para serem executados automaticamente, bem como gerar alertas de finalização ou falhas. O Pentaho Data Integration é amplamente utilizado por diversos tipos de clientes, como instituições financeiras, indústrias, órgãos dos governos federal, estaduais e prefeituras, entidades de saúde, universidades, entre outros. Para a primeira tarefa do ETL, o download dos arquivos .zip, foi utilizado um script em <a href="https://www.python.org/">Python</a>. Python é uma linguagem de programação de alto nível, lançada em 1991. É de propósito geral, sendo muito utilizada para Ciência de Dados e scripts.</li>
 </details>
 
@@ -91,7 +81,7 @@ Para o download, foi desenvolvido um [script em Python](/script-download-revista
 
 No Pentaho Data Integration (PDI), foi implementado um fluxo (job) com etapas de extração dos dados, transformações / formatações / preparação dos campos, e carga para cada tabela no PostgreSQL, conforme [telas do PDI](/anexos/transformacoes.md).
 
-A primeira tarefa do job é "unzip", que extrai o XML do arquivo compactado para o diretório definido. Segue com o job organizando uma sequência de chamadas às "transformations". Cada uma realiza a leitura dos dados importantes do XML, efetua as transformações de alguns campos e carrega as respectivas tabelas no banco de dados. Por fim, move os arquivos compactados para uma pasta auxiliar de histórico e deleta o XML utilizado, limpando a pasta para a carga da semana seguinte.
+A primeira tarefa do job é "unzip", que extrai o XML do arquivo compactado para o diretório definido. Segue com o job organizando uma sequência de chamadas às "transformations". Cada uma realiza a leitura dos dados importantes do XML, efetua as transformações de alguns campos e preenche as respectivas tabelas no banco de dados. Por fim, move os arquivos compactados para uma pasta auxiliar de histórico e deleta o XML utilizado, limpando a pasta para a carga da semana seguinte.
 
 <hr>
 
