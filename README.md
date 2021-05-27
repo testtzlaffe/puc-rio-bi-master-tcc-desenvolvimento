@@ -81,28 +81,28 @@ O processo central do trabalho, o ETL, segue algumas etapas importantes para o a
 
 **Extração:** etapa de coleta / extração dos recursos de dados. Neste trabalho, a extração é responsável pelo download, descompactação dos arquivos zipados, leitura do XML e loop sobre as tags importantes para obtenção dos dados.
 
-**Transformação:** tratamento dos dados brutos, formatações e adequações do conteúdo dos campos. Aqui foram realizadas operações sobre textos (strings), formatações de datas, seleção de valores, entre outros.
+**Transformação:** tratamento dos dados brutos, formatações e adequações do conteúdo dos campos. Aqui foram realizadas operações sobre textos (strings), formatações de datas, seleção de valores, mapper, entre outros.
 
 **Carga:** etapa final do ETL, persiste os dados no repositório de destino. No caso deste projeto, cada conjunto de dados extraídos e transformados para cada entidade, são carregados para o PostgreSQL de forma que semanalmente os registros de processos de marcas estejam sempre atualizados.
 
-Para que seja executado sem necessidade de ação manual, foi configurado no "Agendador de Tarefas" do Windows, para toda terça-feira às 11h, duas execuções: 1) download do arquivo .zip do site do INPI; 2) job configurado no PDI (executado em background).
+Para que seja executado sem necessidade de ação manual, foi configurado no "Agendador de Tarefas" do Windows, para toda terça-feira, duas execuções: 1) download do arquivo .zip do site do INPI; 2) job configurado no Pentaho Data Integration (executado em background).
 
-Para o download, foi desenvolvido um [script em python](/script-download-revistas), que define qual o número atual da revista e baixa o arquivo para determinada pasta. Esta etapa é disparada automaticamente pelo "Agendador de Tarefas" do Windows.
+Para o download, foi desenvolvido um [script em python](/script-download-revistas), que verifica qual o número atual da revista e baixa o arquivo para determinada pasta.
 
-No Pentaho Data Integration (PDI) foi implementado um fluxo (job) de etapas de extração dos dados, transformações / formatações / preparação dos campos, e a carga para cada tabela no PostgreSQL, conforme [telas (job e transformations)](/anexos/transformacoes.md).
+No Pentaho Data Integration (PDI) foi implementado um fluxo (job) com etapas de extração dos dados, transformações / formatações / preparação dos campos, e a carga para cada tabela no PostgreSQL, conforme [telas do PDI](/anexos/transformacoes.md).
 
-A primeira tarefa do job é "unzip file", que extrai o xml do arquivo compactado no diretório definido. Segue com o job organizando uma sequência de chamadas às "transformations" desenvolvidas para cada tabela do banco de dados. Por fim, move os arquivos zipados para uma pasta auxiliar de histórico, deleta o xml utilizado, limpando a pasta para a carga da semana seguinte.
-
-Foram efetuadas cargas com sucesso de 54 revistas sobre marcas, equivalente a 1 ano de acompanhamento. Estas cargas persistiram mais de 1 milhão de despachos e mais de 700 mil processos. Em torno de 940MB.
+A primeira tarefa do job é "unzip", que extrai o XML do arquivo compactado para o diretório definido. Segue com o job organizando uma sequência de chamadas às "transformations". Cada uma realiza a leitura dos dados importantes do XML, efetua as transformações em alguns dados e carrega as respectivas tabelas no banco de dados. Por fim, move os arquivos compactados para uma pasta auxiliar de histórico e deleta o XML utilizado, limpando a pasta para a carga da semana seguinte.
 
 <hr>
 
 ### Resultados e conclusões
 
-A sequência de etapas acima atingiu o objetivo do trabalho de construir um fluxo automatizado, que semanalmente realiza o ETL e que culmina na persistência dos dados no Postgres. 
+A sequência de etapas acima atingiu o objetivo do trabalho de construir um fluxo automatizado, que semanalmente realiza o ETL e que culmina na persistência dos dados no PostgreSQL. 
 
-O conjunto de de tecnologias utilizadas se mostrou capaz de garantir esta carga, mesmo com a quantidade de mais de 1 milhão de despachos por ano.
+As tecnologias adotadas foram capazes de garantir esta carga. O SQL Power Architect se mostrou intuitivo e efetivo na modelagem das entidades e na criação das tabelas. O Python atendeu perfeitamente a etapa de download com um código enxuto. O Pentaho Data Integration foi versátil, permitindo diversos tipos de transformações, e relativamente rápido na leitura de arquivos XML de mais de 20 MB, e na carga direta no PostgreSQL. Neste fluxo semanal, uma Revista de Propriedade Industrial é lida e carregada no banco de dados entre 1 e 2 minutos. E o PostgreSQL, conforme esperado, se mostrou robusto para cadastro de milhões de registros e com boa latência nas consultas.
 
-Este resultado permite que o projeto evolua por exemplo para soluções web ou mobile a fim de disponibilizar serviços de acompanhamento de processos de registros de marca no INPI e de alertas sobre atualizações de despachos, fundamentadas nos dados gravados.
+No trabalho, foram carregadas as últimas 53 Revistas, equivalente a um ano de atualizações do INPI. Entre os números do trabalho, foram persistidos mais de 1 milhão de despachos, referentes a mais de 700 mil processos de registro de marca. O banco de dados final contém mais de 1 GB.
+
+Este sucesso no resultado permite que o projeto evolua por exemplo para soluções web ou mobile a fim de disponibilizar serviços de acompanhamento de registros de marca no INPI e de alertas sobre atualizações de despachos, com base nos dados gravados.
 
 
