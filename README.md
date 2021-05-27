@@ -6,6 +6,8 @@ Christian Testtzlaffe Alpoim ([Linkedin](https://www.linkedin.com/in/christian-t
 
 **Orientador:** Prof. Anderson Nascimento
 
+### [Artigo](/anexos/Artigo.pdf)
+
 <hr>
 
 ### Objetivo
