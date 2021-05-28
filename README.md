@@ -1,18 +1,37 @@
-# TCC | BI Master | PUC-Rio
+# Construção de processo automatizado de extração, transformação e carga de dados para acompanhamento de registros de marcas no INPI
 
-## Construção de processo automatizado de extração, transformação e carga de dados para acompanhamento de registros de marcas no INPI
+#### Aluno: [Christian Testtzlaffe Alpoim](https://github.com/testtzlaffe)
+#### Orientador: Anderson Nascimento
 
-Christian Testtzlaffe Alpoim ([Linkedin](https://www.linkedin.com/in/christian-testtzlaffe-alpoim/))
+---
 
-**Orientador:** Prof. Anderson Nascimento
+Trabalho apresentado ao curso [BI MASTER](https://ica.puc-rio.ai/bi-master) como pré-requisito para conclusão de curso e obtenção de crédito na disciplina "Projetos de Sistemas Inteligentes de Apoio à Decisão".
 
-### [Artigo](/anexos/Artigo.pdf)
+[Link para o Artigo](/anexos/Artigo.pdf)
 
-<hr>
+---
+
+### Resumo
+
+Este projeto descreve o desenvolvimento de um fluxo automatizado de extração, transformação e carga (ETL) de processos de registro de marca no Brasil, com Python, SQL Power Architect, Pentaho Data Integration e PostgreSQL.
+
+### Abstract
+
+This project describes the development of an automated flow of extraction, transformation and loading (ETL) of trademark registration processes in Brazil, with Python, SQL Power Architect, Pentaho Data Integration and PostgreSQL.
+
+---
+
+Matrícula: 192.671.095
+
+Pontifícia Universidade Católica do Rio de Janeiro
+
+Curso de Pós Graduação *Business Intelligence Master*
+
+---
 
 ### Objetivo
 
-Este trabalho tem o objetivo de construir um fluxo automatizado de coleta, transformação e carga/persistência de dados dos processos de registros de marcas originados pelo [Instituto Nacional de Propriedade Industrial (INPI)](https://www.gov.br/inpi/pt-br). Antes deste processo de extração, transformação e carga (ETL), é necessário o mapeamento dos dados, a modelagem e a criação do repositório destes registros (banco de dados relacional). Uma vez que o processo esteja configurado e sendo executado periodicamente, este banco de dados permitirá a construção de aplicações para acompanhamento e alerta sobre o avanço nos registros de marcas.
+Este trabalho tem o objetivo de realizar uma prova de conceito de um fluxo automatizado de coleta, transformação e carga/persistência de dados dos processos de registros de marcas originados pelo [Instituto Nacional de Propriedade Industrial (INPI)](https://www.gov.br/inpi/pt-br). Antes deste processo de extração, transformação e carga (ETL), é necessário o mapeamento dos dados, a modelagem e a criação do repositório destes registros (banco de dados relacional). Uma vez que o processo esteja configurado e sendo executado periodicamente, este banco de dados permitirá a construção de aplicações para acompanhamento e alerta sobre o avanço nos registros de marcas.
 
 <hr>
 
@@ -95,6 +114,6 @@ As tecnologias adotadas foram capazes de garantir esta carga. O SQL Power Archit
 
 No trabalho, foram carregadas as últimas 53 Revistas, equivalente a um ano de atualizações do INPI. Entre os números do trabalho, foram persistidos mais de 1 milhão de despachos, referentes a mais de 700 mil processos de registro de marca. O banco de dados final contém mais de 1 GB.
 
-Este sucesso no resultado permite que o projeto evolua por exemplo para soluções web ou mobile a fim de disponibilizar serviços de acompanhamento de registros de marca no INPI e de alertas sobre atualizações de despachos, com base nos dados gravados.
+Este sucesso na prova de conceito permite que o projeto evolua por exemplo para soluções web ou mobile a fim de disponibilizar serviços de acompanhamento de registros de marca no INPI e de alertas sobre atualizações de despachos, com base nos dados gravados.
 
 
