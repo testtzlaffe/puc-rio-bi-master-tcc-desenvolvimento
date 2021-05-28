@@ -60,6 +60,8 @@ Partindo do mapeamento dos dados da etapa anterior, foi possível identificar qu
 
 [Modelo Relacional](/anexos/modelo.md)
 
+[Arquivo do SQL Power Architect](/sql-power-architect)
+
 <hr>
 
 ### Criação do banco de dados
@@ -85,6 +87,8 @@ Para o download, foi desenvolvido um [script em Python](/script-download-revista
 No Pentaho Data Integration (PDI), foi implementado um fluxo (job) com etapas de extração dos dados, transformações / formatações / preparação dos campos, e carga para cada tabela no PostgreSQL, conforme [telas do PDI](/anexos/transformacoes.md).
 
 A primeira tarefa do job é "unzip", que extrai o XML do arquivo compactado para o diretório definido. Segue com o job organizando uma sequência de chamadas às "transformations". Cada uma realiza a leitura dos dados importantes do XML, efetua as transformações de alguns campos e preenche as respectivas tabelas no banco de dados. Por fim, move os arquivos compactados para uma pasta auxiliar de histórico e deleta o XML utilizado, limpando a pasta para a carga da semana seguinte.
+
+[Arquivos do job e transformations do PDI](/pdi)
 
 <hr>
 
