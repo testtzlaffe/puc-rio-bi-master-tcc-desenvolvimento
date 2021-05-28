@@ -3,7 +3,7 @@
 ### Tabela de mapeamento de tags e atributos do XML:
 
 <table>
-<tr><th>TAG</th><th style="width: 50px;">CAMINHO</th><th>ATRIBUTOS</th><th>CONTÉM TEXTO INTERNO?</th></tr>
+<tr><th>TAG</th><th style="width: 50px;">PATH</th><th>ATRIBUTOS</th><th>CONTÉM TEXTO INTERNO?</th></tr>
 <tr><td>revista</td><td>/revista</td><td>numero, data</td><td></td></tr>
 <tr><td>processo</td><td>/revista/processo</td><td>numero, data-deposito, data-concessao, data-vigencia</td><td></td></tr>
 <tr><td>despachos</td><td>/revista/processo/despachos</td><td></td><td></td></tr>
