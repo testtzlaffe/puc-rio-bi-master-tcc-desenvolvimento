@@ -1,7 +1,7 @@
 # Construção de processo automatizado de extração, transformação e carga de dados para acompanhamento de registros de marcas no INPI
 
 #### Aluno: [Christian Testtzlaffe Alpoim](https://github.com/testtzlaffe)
-#### Orientador: Anderson Nascimento
+#### Orientador: [Anderson Nascimento](https://github.com/insightds)
 
 ---
 
@@ -112,7 +112,7 @@ A sequência de etapas acima atingiu o objetivo do trabalho de construir um flux
 
 As tecnologias adotadas foram capazes de garantir esta carga. O SQL Power Architect se mostrou intuitivo e efetivo na modelagem das entidades e na criação das tabelas. O Python atendeu perfeitamente a etapa de download com um código enxuto. O Pentaho Data Integration foi versátil, permitindo diversos tipos de transformações, e relativamente rápido na leitura de arquivos XML de mais de 20 MB, e na carga direta no PostgreSQL. Neste fluxo semanal, uma Revista de Propriedade Industrial é lida e carregada no banco de dados entre 1 e 2 minutos. E o PostgreSQL, conforme esperado, se mostrou robusto para cadastro de milhões de registros e com boa latência nas consultas.
 
-No trabalho, foram carregadas as últimas 53 Revistas, equivalente a um ano de atualizações do INPI. Entre os números do trabalho, foram persistidos mais de 1 milhão de despachos, referentes a mais de 700 mil processos de registro de marca. O banco de dados final contém mais de 1 GB.
+No projeto, foram carregadas as últimas 53 Revistas, equivalentes a um ano de atualizações do INPI. Entre os números do trabalho, foram persistidos mais de 1 milhão de despachos, referentes a mais de 700 mil processos de registro de marca. O banco de dados final contém mais de 1 GB.
 
 Este sucesso na prova de conceito permite que o projeto evolua por exemplo para soluções web ou mobile a fim de disponibilizar serviços de acompanhamento de registros de marca no INPI e de alertas sobre atualizações de despachos, com base nos dados gravados.
 
