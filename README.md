@@ -14,11 +14,11 @@ Trabalho apresentado ao curso [BI MASTER](https://ica.puc-rio.ai/bi-master) como
 
 ### Resumo
 
-Este repositório descreve o desenvolvimento de um fluxo automatizado de extração, transformação e carga (ETL) de processos de registro de marca no Brasil, com Python, SQL Power Architect, Pentaho Data Integration e PostgreSQL.
+Desenvolvimento de um fluxo automatizado de extração, transformação e carga (ETL) de processos de registro de marca no Brasil, com Python, SQL Power Architect, Pentaho Data Integration e PostgreSQL.
 
 ### Abstract
 
-This repository describes the development of an automated flow of extraction, transformation and loading (ETL) of trademark registration processes in Brazil, with Python, SQL Power Architect, Pentaho Data Integration and PostgreSQL.
+Development of an automated flow of extraction, transformation and loading (ETL) of trademark registration processes in Brazil, with Python, SQL Power Architect, Pentaho Data Integration and PostgreSQL.
 
 ---
 
