@@ -92,14 +92,40 @@ A primeira tarefa do job é "unzip", que extrai o XML do arquivo compactado para
 
 <hr>
 
+### Construção da API
+
+Após a conclusão das cargas de dados para o PostgreSQL, foi desenvolvida uma Application Programming Interface (API) em Node.js/JavaScript para disponibilização de um serviço de consulta aos dados dos processos de registros de marcas. Isto permite a consulta de informações por outras aplicações.
+
+<details>
+  <summary>Ver imagem de exemplo de parte de resposta da API</summary>
+  <img src="/imagens/api-response.png"/>
+</details>  
+
+[Link para código da API](https://github.com/testtzlaffe/api-acompanhamento-marcas)
+
+<hr>
+
+### Construção da visualização
+
+E como última etapa da prova de conceito, está a visualização dos dados por usuários. Para isso, foi desenvolvido um protótipo de interface web com Next.js/React.js/JavaScript. Por meio desta aplicação, é possível consultar dados da marca, titulares, procurador, classificações e principalmente atualizações e despachos de cada processo, em uma tela simples e intuitiva.
+
+<details>
+  <summary>Ver telas de exemplo</summary>
+  <img src="/imagens/interface.png"/>
+</details>  
+
+[Link para código da interface web](https://github.com/testtzlaffe/interface-acompanhamento-marcas)
+
+<hr>
+
 ### Resultados e conclusões
 
-A sequência de etapas acima atingiu o objetivo do trabalho de construir um fluxo automatizado, que semanalmente realiza o ETL e que culmina na persistência dos dados no PostgreSQL. 
+A sequência de etapas acima atingiu o objetivo do trabalho de construir um fluxo automatizado, que semanalmente realiza o ETL e que culmina na persistência dos dados no PostgreSQL. Além disso, foi possível já construir o protótipo da API e interface para visualização dos dados.
 
 As tecnologias adotadas foram capazes de garantir esta carga. O SQL Power Architect se mostrou intuitivo e efetivo na modelagem das entidades e na criação das tabelas. O Python atendeu perfeitamente a etapa de download com um código enxuto. O Pentaho Data Integration foi versátil, permitindo diversos tipos de transformações, e relativamente rápido na leitura de arquivos XML de mais de 20 MB, e na carga direta no PostgreSQL. Neste fluxo semanal, uma Revista de Propriedade Industrial é lida e carregada no banco de dados entre 1 e 2 minutos. E o PostgreSQL, conforme esperado, se mostrou robusto para cadastro de milhões de registros e com boa latência nas consultas.
 
-No projeto, foram carregadas as últimas 53 Revistas, equivalentes a um ano de atualizações do INPI. Entre os números do trabalho, foram persistidos mais de 1 milhão de despachos, referentes a mais de 700 mil processos de registro de marca. O banco de dados final contém mais de 1 GB.
+No projeto, foram carregadas as últimas 53 Revistas (número 2577 a 2629), equivalentes a um ano de atualizações do INPI. Entre os números do trabalho, foram persistidos mais de 1 milhão de despachos, referentes a mais de 700 mil processos de registro de marca. O banco de dados final contém mais de 1 GB.
 
-Este sucesso na prova de conceito permite que o projeto evolua por exemplo para soluções web ou mobile a fim de disponibilizar serviços de acompanhamento de registros de marca no INPI e de alertas sobre atualizações de despachos, com base nos dados gravados.
+Este sucesso na prova de conceito permite que o projeto evolua com incrementos nas funcionalidades do serviço de acompanhamento de registros e na interface, com base nos dados gravados.
 
 
